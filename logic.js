@@ -12,45 +12,12 @@ d3.json(url).then(function(data) {
 });
 
 function createFeatures(data) {
-    console.log(data)
+    console.log(data.features.slice(0, 1000))
+    L.geoJSON(data.features.slice(0,1000)).addTo(map);
 }
 
 
 
-var data = L.geoJSON(data);
-
-// Marker 
-var marker = L.marker([33.4148, -111.9093]).addTo(map);
-
-var marker = L.marker(layer.getLatLng()).addTo(map);
-
-// var marker = L.marker(layer.getLatLng());
-// marker.bindPopup(feature.properties.year);
-// marker.addTo(map);
-
-
-// L.geoJSON(data, {
-//     onEachFeature: function (feature,layer) {
-//         var marker = L.marker(layer.getLatLng());
-        
-//     }
-// }).addTo(map);
-
-
-
-
-// function onEachFeature(feature,layer) {
-//     var marker = L.marker([layer.getLatLng()])
-//     layer.bindPopup(
-//         `<h3>${feature.properties.incidentid}
-//         <h3> date: ${feature.properties.datetime}</h3>`);
-    
-// }
-// var data = L.geoJSON(data, {
-//     onEachFeature : onEachFeature
-// });
-
-console.log(data)
 
 
 
